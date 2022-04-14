@@ -3,7 +3,7 @@ entity Cooperative {
     name String required maxlength(100)
 }
 
-entity User {
+entity Client {
     id Integer required,
     firstname String required pattern(/^[A-Za-z\- ]+$/) maxlength(100), // Accepte les minuscules, majuscules, tirets et espaces
     lastname String required pattern(/^[A-Za-z\- ]+$/) maxlength(100), // Accepte les minuscules, majuscules, tirets et espaces
@@ -42,14 +42,14 @@ entity Order {
 
 
 relationship OneToOne {
-    Order to User,
+    Order to Client,
     Order to Courier,
     Product to Restaurant
     Courier to Cooperative
 }
 
 relationship OneToMany {
-    User to Order,
+    Client to Order,
     Courier to Order,
     Restaurant to Product,
     Cooperative to Courier
