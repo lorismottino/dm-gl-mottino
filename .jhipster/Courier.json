@@ -1,0 +1,57 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414134255",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "courier",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "firstname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern", "maxlength"],
+      "fieldValidateRulesMaxlength": "100",
+      "fieldValidateRulesPattern": "^[A-Za-z\\- ]+$"
+    },
+    {
+      "fieldName": "lastname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern", "maxlength"],
+      "fieldValidateRulesMaxlength": "100",
+      "fieldValidateRulesPattern": "^[A-Za-z\\- ]+$"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Courier",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "courier",
+      "relationshipName": "order",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "cooperative",
+      "otherEntityRelationshipName": "courier",
+      "relationshipName": "cooperative",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

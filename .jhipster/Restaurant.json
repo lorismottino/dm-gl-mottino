@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414134256",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "restaurant",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "300"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Restaurant",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "restaurant",
+      "relationshipName": "product",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "cooperative",
+      "otherEntityRelationshipName": "restaurant",
+      "ownerSide": true,
+      "relationshipName": "cooperative",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

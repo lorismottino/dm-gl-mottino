@@ -1,42 +1,42 @@
 entity Cooperative {
-    id Integer required,
+    id String required,
     name String required maxlength(100)
 }
 
 entity Client {
-    id Integer required,
+    id String required,
     firstname String required pattern(/^[A-Za-z\- ]+$/) maxlength(100), // Accepte les minuscules, majuscules, tirets et espaces
     lastname String required pattern(/^[A-Za-z\- ]+$/) maxlength(100), // Accepte les minuscules, majuscules, tirets et espaces
     address String required maxlength(300),
     phone String,
-    email String pattern(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/)
+    email String
 }
 
 entity Courier {
-    id Integer required,
+    id String required,
     firstname String required pattern(/^[A-Za-z\- ]+$/) maxlength(100), // Accepte les minuscules, majuscules, tirets et espaces
     lastname String required pattern(/^[A-Za-z\- ]+$/) maxlength(100), // Accepte les minuscules, majuscules, tirets et espaces
     phone String required,
-    email String pattern(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/)
+    email String
 }
 
 entity Restaurant {
-    id Integer required,
+    id String required,
     name String required maxlength(100),
     address String required maxlength(300)
 }
 
 
 entity Product {
-    id Integer required,
+    id String required,
     name String required maxlength(100),
-    price Integer required min(0),
+    price Float required min(0),
     description String maxlength(1000)
 }
 
 entity Order {
-    id Integer required,
-    price Integer required min(0)
+    id String required,
+    price Float required min(0)
 }
 
 

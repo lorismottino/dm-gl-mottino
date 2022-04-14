@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414134258",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "jhi_order",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Order",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "courier",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "courier",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "order",
+      "ownerSide": false,
+      "relationshipName": "product",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

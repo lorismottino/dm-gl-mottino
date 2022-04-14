@@ -1,0 +1,41 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414134253",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "cooperative",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Cooperative",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "courier",
+      "otherEntityRelationshipName": "cooperative",
+      "relationshipName": "courier",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "restaurant",
+      "otherEntityRelationshipName": "cooperative",
+      "ownerSide": false,
+      "relationshipName": "restaurant",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,56 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414134254",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "client",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "firstname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern", "maxlength"],
+      "fieldValidateRulesMaxlength": "100",
+      "fieldValidateRulesPattern": "^[A-Za-z\\- ]+$"
+    },
+    {
+      "fieldName": "lastname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern", "maxlength"],
+      "fieldValidateRulesMaxlength": "100",
+      "fieldValidateRulesPattern": "^[A-Za-z\\- ]+$"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "300"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Client",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "client",
+      "relationshipName": "order",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}
