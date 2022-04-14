@@ -41,13 +41,6 @@ entity Order {
 
 
 
-relationship OneToOne {
-    Order to Client,
-    Order to Courier,
-    Product to Restaurant
-    Courier to Cooperative
-}
-
 relationship OneToMany {
     Client to Order,
     Courier to Order,
